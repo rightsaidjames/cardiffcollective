@@ -1,12 +1,33 @@
 html {
-  background: #eee;
+  background: #E9E8E2;
 }
 
 body {
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 0 3px rgba(0,0,0,0.25);
+  color: #222;
+  font-family: arial, sans-serif;
+  font-size: 100%;
   margin: 2em auto;
-  padding: 1em;
-  width: 80%;
+  padding: 20px;
+  width: 920px;
+}
+
+label {
+  color: #444;
+  font-size: 13px;
+}
+
+input[type=text],
+input[type=url],
+input[type=email],
+input[type=password] {
+  border: 1px solid #ccc;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.field {
+  margin-bottom: 0.8em;
 }

@@ -1,3 +1,5 @@
+<%= link_to "Sign Out", destroy_user_session_path, :method => :delete if user_signed_in? %>
+
 <% @users.each do |user| %>
   <%= user.inspect %>
 <% end %>
