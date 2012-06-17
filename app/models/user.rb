@@ -7,4 +7,16 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :website, :company
+
+
+
+  # Public: The User's full name
+  #
+  # Returns a String of the User's first_name and last_name
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  
+
 end

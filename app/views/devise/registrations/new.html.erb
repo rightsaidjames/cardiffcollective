@@ -4,43 +4,56 @@
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </div>
+    <fieldset>
+      <legend>Your Details</legend>
 
-    <div class="field">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </div>
+      <div class="field">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </div>
 
-    <div class="field">
-      <%= f.label :website %>
-      <%= f.url_field :website %>
-    </div>
+      <div class="field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </div>
 
-    <div class="field">
-      <%= f.label :company %>
-      <%= f.text_field :company %>
-    </div>
+      <div class="field">
+        <%= f.label :bio, "About you" %>
+        <%= f.text_area :bio %>
+      </div>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-    </div>
+      <div class="field">
+        <%= f.label :website %>
+        <%= f.url_field :website %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
+      <div class="field">
+        <%= f.label :company %>
+        <%= f.text_field :company %>
+      </div>
+    </fieldset>
 
-    <div class="field">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </div>
+    <fieldset>
+      <legend>Your Account</legend>
 
-    <div class="field">
-      <%= f.submit "Sign up" %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </fieldset>
+
+    <div class="field actions">
+      <%= f.submit "Sign Up" %>
     </div>
 
   <% end %>

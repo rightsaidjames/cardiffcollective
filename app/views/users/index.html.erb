@@ -1,0 +1,20 @@
+<article class="users">
+  <header>
+    <ol class="index cf">
+      <% ("A".."Z").each do |letter| %>
+        <li><%= link_to letter, "##{letter}" %></li>
+      <% end %>
+    </ol>
+  </header>
+
+  <% @users_letters.each do |letter, users| %>
+    <h2 id="#<%= letter.upcase %>" class="index-letter"><%= letter.upcase %></h2>
+
+    <ol class="user-list">
+      <% users.each do |user| %>
+        <li><%= link_to user.name, user %></li>
+      <% end %>
+    </ol>
+  <% end %>
+
+</article>

@@ -1,0 +1,121 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// INDEX
+
+/* INDEX */
+
+.users {
+  .index {
+    list-style: none;
+    margin-bottom: 2em;
+    padding: 0;
+    position: relative;
+    text-align: center;
+
+    li {
+      display: block;
+      float: left;
+      height: 50px;
+      position: relative;
+      width: 35px;
+      text-align: center;
+
+      a {
+        bottom: 0;
+        display: block;
+        font-size: 1.5em;
+        margin: 0 auto;
+        padding: 0.1em 0.2em;
+        position: absolute;
+        -webkit-transition: font-size 0.1s; 
+
+        &:hover {
+          background: #ffd;
+          font-size: 2.5em;
+        }
+      }
+    }
+  }
+
+  .index-letter {
+    border-bottom: 1px dashed #ccc;
+    color: #777;
+  }
+
+  .user-list {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+
+// SHOW 
+article.user {
+  padding-left: 120px;
+  position: relative;
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+
+  .name {
+    margin: 0 0 0.2em 0;
+  }
+
+  .website {
+    display: block;
+  }
+
+  .company {
+    color: #999;
+    display: block;
+  }
+
+  .bio {
+    border-bottom: 1px dashed #ccc;
+    color: #444;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .skills {
+    .title {
+      font-size: 18px;
+    }
+  }
+
+  .contact {
+    background: #eee;
+    margin-top: 40px;
+    padding: 20px;
+
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    textarea {
+      background: #ddd;
+      border: 2px solid #ccc;
+      color: #444;
+      font-size: 18px;
+      height: 220px;
+      padding: 4px;
+      width: 752px;
+    }
+  }
+}

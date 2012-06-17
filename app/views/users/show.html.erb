@@ -1,0 +1,32 @@
+<article class="user">
+  <header>
+    <img src="http://placehold.it/100" class="avatar" />
+    <h1 class="name"><%= @user.name %></h1>
+    <%= link_to @user.website, @user.website, class: "website" %>
+    <span class="company"><%= @user.company %></span>
+  </header>
+
+  <section id="bio" class="bio">
+    <p><%= @user.bio %></p>
+  </section>
+
+  <section id="skills" class="skills core">
+    <h1 class="title">I know a bit about:</h1>
+    <ul class="tags">
+
+    </ul>
+  </section>
+
+  <section id="skills" class="skills desired">
+    <h1 class="title">I want to know more about:</h1>
+    <ul class="tags">
+
+    </ul>
+  </section>
+
+  <footer class="contact">
+    <h1>Contact Gareth</h1>
+
+  </footer>
+
+</article>
