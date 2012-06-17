@@ -51,7 +51,19 @@ input[type=password] {
 #main {
   background: #fff;
   box-shadow: 0 0 3px rgba(0,0,0,0.25);
-  margin: 0 auto 4em auto;
+  margin: 0 auto 1em auto;
   padding: 20px;
   width: 920px;
+}
+
+// FOOTER
+
+#footer {
+  margin: 0 auto 4em auto;
+  width: 920px;
+  .login-items {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+  }
 }
