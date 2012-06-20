@@ -52,6 +52,20 @@
       </div>
     </fieldset>
 
+    <fieldset>
+      <legend>Your Skills</legend>
+
+      <div class="field">
+        <%= f.label :skill_list, "What are you good at?" %>
+        <%= f.text_field :skill_list %>
+      </div>
+
+      <div class="field">
+        <%= f.label :learning_list, "What do you want to know more about?" %>
+        <%= f.text_field :learning_list %>
+      </div>
+    </fieldset>
+
     <div class="field actions">
       <%= f.submit "Sign Up" %>
     </div>

@@ -67,3 +67,19 @@ input[type=password] {
     text-align: right;
   }
 }
+
+// GENERAL
+.tags {
+  padding: 0;
+
+  li {
+    display: inline-block;
+
+    a {
+      background: #D5E9F6;
+      color: #069;
+      padding: 0.4em 0.6em;
+      text-decoration: none;
+    }
+  }
+}

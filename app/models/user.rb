@@ -6,9 +6,13 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :website, :company
+                  :first_name, :last_name, :website, :company, :bio,
+                  :skills, :learning, :skill_list, :learning_list
 
+  acts_as_taggable
+  acts_as_taggable_on :skills, :learning
 
+  before_update :log_tags
 
   # Public: The User's full name
   #
@@ -17,6 +21,9 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def log_tags
+    Rails.logger.info "TAG LIST"
+  end
   
 
 end
