@@ -8,7 +8,7 @@
   </header>
 
   <% @users_letters.each do |letter, users| %>
-    <h2 id="#<%= letter.upcase %>" class="index-letter"><%= letter.upcase %></h2>
+    <h2 id="<%= letter.upcase %>" class="index-letter"><%= letter.upcase %></h2>
 
     <ol class="user-list">
       <% users.each do |user| %>

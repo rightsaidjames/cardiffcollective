@@ -2,7 +2,7 @@
   <header>
     <img src="http://placehold.it/100" class="avatar" />
     <h1 class="name"><%= @user.name %></h1>
-    <%= link_to @user.website, @user.website, class: "website" %>
+    <%= link_to @user.website, "http://"+@user.website, class: "website" %>
     <span class="company"><%= @user.company %></span>
   </header>
 
@@ -29,7 +29,7 @@
   </section>
 
   <footer class="contact">
-    <h1>Contact Gareth</h1>
+    <h1>Contact <%= @user.first_name %></h1>
 
   </footer>
 

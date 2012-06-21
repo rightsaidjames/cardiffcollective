@@ -1,0 +1,19 @@
+<h1>You want to learn about:</h1>
+
+<ul style="list-style:none; padding-left:0;">
+<% @user.learning.each do |learning| %>
+  <% User.tagged_with(learning, :on => :skills).each do |user| %>
+    <li style="margin-bottom: 0.8em;"><%= link_to user.name, user %> can help you learn <%= link_to learning, "#", class: 'tag' %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<h1>Help others learn</h1>
+
+<ul style="list-style:none; padding-left:0;">
+<% @user.skills.each do |skill| %>
+  <% User.tagged_with(skill, :on => :learning).each do |user| %>
+    <li style="margin-bottom: 0.8em;">You can help <%= link_to user.name, user %> to learn <%= link_to skill, "#", class: 'tag' %></li>
+  <% end %>
+<% end %>
+</ul>
