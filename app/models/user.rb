@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  # :token_authenticatable, :encryptable, :confirmable, :lockable,
+  # :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -34,6 +35,16 @@ class User < ActiveRecord::Base
 
   private
 
+  # Internal: Strip whitespace from name attributes
+  #
+  # Example
+  #
+  #   @user.first_name = ' Gareth '
+  #   @user.save
+  #   @user.first_name
+  #   # => "Gareth"
+  #
+  # Returns ???
   def strip_names
     first_name = first_name.strip
     firstlast_name = last_name.strip
