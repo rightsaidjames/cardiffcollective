@@ -3,34 +3,37 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Cardiff Collective</title>
-  <title>Cardiffcollective</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-	<header id="banner" class="cf">
-		<h1>Cardiff Collective</h1>
-		<span class="strapline">Connect with people in Cardiff</span>
-	</header>
+  <div class="wrap">
 
-  <%= render "shared/flash", :object => flash %>
+  	<header id="banner" class="cf">
+  		<h1 class="mark"><%= link_to 'Cardiff Collective', root_url %></h1>
+  		<span class="strapline">Connect with creative people in Cardiff</span>
+  	</header>
 
-	<div id="main" class="cf">
-    <%= yield %>
+    <%= render 'shared/flash', object: flash %>
+
+  	<div id="main" class="cf">
+      <%= yield %>
+    </div>
+
+    <footer id="footer" class="cf">
+      <ul class="login-items">
+        <%= render partial: 'devise/menu/login_items' %>
+      </ul>
+    </footer>
+
   </div>
-
-  <footer id="footer" class="cf">
-    <ul class="login-items">
-      <%= render :partial => "devise/menu/login_items" %>
-    </ul>
-  </footer>
 
 </body>
 </html>

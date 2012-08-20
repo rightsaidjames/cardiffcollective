@@ -1,10 +1,6 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$red: #C62E32;
 
 // INDEX
-
-/* INDEX */
 
 .users {
   .index {
@@ -50,8 +46,10 @@
   }
 }
 
+// ============================================================================
+// SHOW
+// ============================================================================
 
-// SHOW 
 article.user {
   padding-left: 120px;
   position: relative;
@@ -62,6 +60,7 @@ article.user {
 
   .avatar {
     border-radius: 50%;
+    box-shadow: 0 0 6px rgba($red, 0.25);
     display: block;
     left: 0;
     position: absolute;
@@ -72,6 +71,7 @@ article.user {
   }
 
   .website {
+    color: $red;
     display: block;
   }
 
@@ -81,7 +81,7 @@ article.user {
   }
 
   .bio {
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed rgba($red, 0.25);
     color: #444;
     font-size: 22px;
     margin-bottom: 20px;
@@ -92,30 +92,33 @@ article.user {
     }
   }
 
-  .skills {
-    .title {
-      font-size: 18px;
+  #skills {
+    border-bottom: 1px dashed rgba($red, 0.25);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    .skills {
+      .title {
+        font-size: 18px;
+      }
     }
   }
 
   .contact {
-    background: #eee;
-    margin-top: 40px;
-    padding: 20px;
 
     h1 {
       font-size: 24px;
-      margin-top: 0;
+      margin: 0 0 0.2em 0;
     }
 
     textarea {
-      background: #ddd;
+      background: #eee;
       border: 2px solid #ccc;
       color: #444;
       font-size: 18px;
       height: 220px;
       padding: 4px;
-      width: 752px;
+      width: 828px;
     }
   }
 }

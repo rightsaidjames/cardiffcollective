@@ -2,7 +2,7 @@
   <header>
     <img src="http://placehold.it/100" class="avatar" />
     <h1 class="name"><%= @user.name %></h1>
-    <%= link_to @user.website, "http://"+@user.website, class: "website" %>
+    <%= link_to @user.website, "http://#{ @user.website }", class: "website" %>
     <span class="company"><%= @user.company %></span>
   </header>
 
@@ -10,27 +10,40 @@
     <p><%= @user.bio %></p>
   </section>
 
-  <section id="skills" class="skills core">
-    <h1 class="title">I know a bit about:</h1>
-    <ul class="tags">
-      <% @user.skills.each do |tag| %>
-        <li><%= link_to tag, "#" %></li>
-      <% end %>
-    </ul>
-  </section>
+  <section id="skills">
+    <div class="skills core">
+      <h1 class="title">I know a bit about:</h1>
+      <ul class="tags">
+        <% @user.skills.each do |tag| %>
+          <li><%= link_to tag, "#", class: 'tag' %></li>
+        <% end %>
+      </ul>
+    </div>
 
-  <section id="skills" class="skills desired">
-    <h1 class="title">I want to know more about:</h1>
-    <ul class="tags">
-      <% @user.learning.each do |tag| %>
-        <li><%= link_to tag, "#" %></li>
-      <% end %>
-    </ul>
+    <div class="skills desired">
+      <h1 class="title">I want to know more about:</h1>
+      <ul class="tags">
+        <% @user.learning.each do |tag| %>
+          <li><%= link_to tag, "#", class: 'tag' %></li>
+        <% end %>
+      </ul>
+    </div>
   </section>
 
   <footer class="contact">
     <h1>Contact <%= @user.first_name %></h1>
+    <% if current_user %>
+      <form action="#" method="post" accept-charset="utf-8">
+        <div class="field">
+          <textarea placeholder="Your message to <%= @user.first_name %>"></textarea>
+        </div>
 
+        <div class="field actions">
+          <input type="submit" value="Send Message">
+        </div>
+      </form>
+    <% else %>
+      <p><%= link_to 'Sign In', new_user_session_path %> to contact <%= @user.name %>.</p>
+    <% end %>
   </footer>
-
 </article>
