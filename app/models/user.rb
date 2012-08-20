@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :skills, :learning
 
+  before_save :strip_names
   before_update :log_tags
 
   # Public: The User's full name
@@ -26,6 +27,16 @@ class User < ActiveRecord::Base
   def log_tags
     Rails.logger.info "TAG LIST"
   end
-  
+
+  # ===========================================================================
+  # Private
+  # ===========================================================================
+
+  private
+
+  def strip_names
+    first_name = first_name.strip
+    firstlast_name = last_name.strip
+  end
 
 end
