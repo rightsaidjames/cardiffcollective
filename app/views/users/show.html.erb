@@ -1,6 +1,6 @@
 <article class="user">
   <header>
-    <img src="http://placehold.it/100" class="avatar" />
+    <%= image_tag @user.avatar_path, class: 'avatar' %>
     <h1 class="name"><%= @user.name %></h1>
     <%= link_to @user.website, "http://#{ @user.website }", class: "website" %>
     <span class="company"><%= @user.company %></span>
@@ -15,7 +15,7 @@
       <h1 class="title">I know a bit about:</h1>
       <ul class="tags">
         <% @user.skills.each do |tag| %>
-          <li><%= link_to tag, "#", class: 'tag' %></li>
+          <li><%= link_to tag, tag_path(tag), class: 'tag' %></li>
         <% end %>
       </ul>
     </div>
@@ -24,7 +24,7 @@
       <h1 class="title">I want to know more about:</h1>
       <ul class="tags">
         <% @user.learning.each do |tag| %>
-          <li><%= link_to tag, "#", class: 'tag' %></li>
+          <li><%= link_to tag, tag_path(tag), class: 'tag' %></li>
         <% end %>
       </ul>
     </div>

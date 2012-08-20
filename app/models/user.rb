@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
 
   alias_method :full_name, :name
 
+  def avatar_path
+    'http://placehold.it/100'
+  end
+
   def log_tags
     Rails.logger.info "TAG LIST"
   end
@@ -46,8 +50,8 @@ class User < ActiveRecord::Base
   #
   # Returns ???
   def strip_names
-    first_name = first_name.strip
-    firstlast_name = last_name.strip
+    # first_name = first_name.strip
+    # last_name = last_name.strip
   end
 
 end

@@ -1,0 +1,20 @@
+// ============================================================================
+// SHOW
+// ============================================================================
+
+.tag-index,
+.tag-show {
+  .user-list {
+    list-style: none;
+    padding: 0;
+    .user {
+      margin-bottom: 1.2em;
+
+      .avatar {
+        margin-right: 0.4em;
+        vertical-align: middle;
+        width: 32px;
+      }
+    }
+  }
+}

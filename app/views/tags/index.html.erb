@@ -1,0 +1,53 @@
+<article class="tag-index">
+
+  <% if current_user %>
+    <section id="learning">
+      <h1>You want to learn about</h1>
+
+      <ul class="user-list">
+      <% current_user.learning.each do |tag| %>
+        <% User.tagged_with(tag, :on => :skills).each do |user| %>
+          <li class="user">
+            <%= image_tag user.avatar_path, class: 'avatar' %>
+            <%= link_to user.name, user %> can help you learn <%= link_to tag, tag_path(tag), class: 'tag' %>
+          </li>
+        <% end %>
+      <% end %>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h1>Help others learn</h1>
+
+      <ul class="user-list">
+      <% current_user.skills.each do |tag| %>
+        <% User.tagged_with(tag, :on => :learning).each do |user| %>
+          <li class="user">
+            <%= image_tag user.avatar_path, class: 'avatar' %>
+            You can help <%= link_to user.name, user %> to learn <%= link_to tag, tag_path(tag), class: 'tag' %>
+        </li>
+        <% end %>
+      <% end %>
+      </ul>
+    </section>
+  <% else %>
+    <section id="skills">
+      <h1>Most popular skills</h1>
+      <ul class="tags">
+        <% @skills.each do |tag| %>
+          <li><%= link_to tag, tag_path(tag), class: 'tag' %></li>
+        <% end %>
+      </ul>
+    </section>
+
+    <section id="learning">
+    <h1>Most requested skills</h1>
+      <ul class="tags">
+        <% @learnings.each do |tag| %>
+          <li><%= link_to tag, tag_path(tag), class: 'tag' %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+</article>

@@ -1,0 +1,29 @@
+<article class="tag-show">
+
+  <section id="skills">
+    <h1><%= pluralize(@skilled.size, 'person knows', 'people know') %> about <span class="tag"><%= @tag %></span></h1>
+
+    <ul class="user-list">
+      <% @skilled.each do |user| %>
+        <li class="user">
+          <%= image_tag user.avatar_path, class: 'avatar' %>
+          <%= link_to user.name, user_path(user) %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section id="learning">
+    <h1><%= pluralize(@learning.size, 'person wants', 'people want') %> to learn about <span class="tag"><%= @tag %></span></h1>
+
+    <ul class="user-list">
+      <% @learning.each do |user| %>
+        <li class="user">
+          <%= image_tag user.avatar_path, class: 'avatar' %>
+          <%= link_to user.name, user_path(user) %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+</article>
