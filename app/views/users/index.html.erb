@@ -2,13 +2,13 @@
   <header>
     <ol class="index cf">
       <% ("A".."Z").each do |letter| %>
-        <li><%= link_to letter, "##{letter}" %></li>
+        <li><%= link_to letter, "##{ letter.downcase }" %></li>
       <% end %>
     </ol>
   </header>
 
   <% @users_letters.each do |letter, users| %>
-    <h2 id="<%= letter.upcase %>" class="index-letter"><%= letter.upcase %></h2>
+    <h2 id="<%= letter.downcase %>" class="index-letter"><%= letter.upcase %></h2>
 
     <ol class="user-list">
       <% users.each do |user| %>
