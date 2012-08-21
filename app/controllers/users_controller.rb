@@ -9,8 +9,11 @@ class UsersController < ApplicationController
   end
 
   def me
-    @user = current_user
-    redirect_to @user
+    if current_user
+      redirect_to current_user
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
 end

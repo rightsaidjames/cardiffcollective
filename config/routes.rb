@@ -1,8 +1,9 @@
 Cardiffcollective::Application.routes.draw do
 
-  match '/me' => 'users#me'
-
   resources :tags, :only => [:index, :show]
+
+  match '/me' => 'users#me'
+  match '/:id' => 'users#show', :as => :user
 
   devise_for :users
   resources :users, :only => [:index, :show]
