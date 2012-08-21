@@ -2,11 +2,11 @@ Cardiffcollective::Application.routes.draw do
 
   resources :tags, :only => [:index, :show]
 
-  match '/me' => 'users#me'
-  match '/:id' => 'users#show', :as => :user
+  match '/me' => 'users#me', :as => :my_profile, :via => :get
+  match '/:id' => 'users#show', :as => :user, :via => :get
 
   devise_for :users
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index]
 
   root :to => "users#index"
 
