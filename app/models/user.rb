@@ -13,12 +13,11 @@ class User < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :skills, :learning
 
-  before_save :strip_names
-  before_update :log_tags
+  before_save :capitalize_names
 
-  validates :first_name, :last_name, :email, :bio, :presence => true
+  validates :first_name, :last_name, :email, :presence => true
   validates :first_name, :last_name, :format => { :with => /\A[a-zA-Z]+\z/,
-                                                  :message => "Only letters allowed" }
+                                                  :message => "only letters allowed" }
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :bio, :length => { :in => 2..140 }
 
@@ -26,38 +25,30 @@ class User < ActiveRecord::Base
   #
   # Returns a String of the User's first_name and last_name
   def name
-    "#{first_name} #{last_name}"
+    "#{ first_name } #{ last_name }"
   end
 
   alias_method :full_name, :name
-
-  def avatar_path
-    'http://placehold.it/100'
-  end
-
-  def log_tags
-    Rails.logger.info "TAG LIST"
-  end
 
   # ===========================================================================
   # Private
   # ===========================================================================
 
-  private
+  # private
 
-  # Internal: Strip whitespace from name attributes
+  # Internal: Capitalize each name attribute
   #
   # Example
   #
-  #   @user.first_name = ' Gareth '
+  #   @user.first_name = 'gareth'
   #   @user.save
   #   @user.first_name
   #   # => "Gareth"
   #
-  # Returns ???
-  def strip_names
-    # first_name = first_name.strip
-    # last_name = last_name.strip
+  # Returns a String
+  def capitalize_names
+    first_name.capitalize!
+    last_name.capitalize!
   end
 
 end
