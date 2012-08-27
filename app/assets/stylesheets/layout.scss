@@ -18,6 +18,18 @@ label {
   font-size: 13px;
 }
 
+label.required:after {
+  color: $red;
+  content: '*';
+}
+
+.required {
+  color: $red;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 0.8em;
+}
+
 input[type=text],
 input[type=url],
 input[type=email],

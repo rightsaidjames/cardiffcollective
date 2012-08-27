@@ -20,7 +20,7 @@ $red: #C62E32;
     font-size: 24px;
     font-weight: bold;
     list-style: none;
-    margin-bottom: 2em;
+    margin: 0 0 2em 0;
     padding: 0;
 
     li {
@@ -41,19 +41,12 @@ $red: #C62E32;
         text-decoration: underline;
       }
     }
-
   }
 
   .index-letter {
     border-bottom: 1px dashed #ccc;
     color: #777;
   }
-
-//  .user-list {
-//    list-style: none;
-//    margin: 0 0 0.8em 0;
-//    padding: 0;
-//  }
 
   .user-list {
     list-style: none;
@@ -78,6 +71,7 @@ $red: #C62E32;
         vertical-align: middle;
         width: 80px;
       }
+
       a {
         display: inline-block;
         vertical-align: middle;
