@@ -10,9 +10,12 @@
   <% @users_letters.each do |letter, users| %>
     <h2 id="<%= letter.downcase %>" class="index-letter"><%= letter.upcase %></h2>
 
-    <ol class="user-list">
+    <ol class="user-list cf">
       <% users.each do |user| %>
-        <li><%= link_to user.name, user %></li>
+        <li class="user">
+          <%= gravatar_image_tag user.email, alt: user.name, class: 'avatar', gravatar: { size: 80 } %>
+          <%= link_to raw("<div>#{ user.first_name }</div><div>#{ user.last_name }</div>"), user_path(user) %>
+        </li>
       <% end %>
     </ol>
   <% end %>

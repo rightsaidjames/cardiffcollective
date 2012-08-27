@@ -17,35 +17,31 @@ $red: #C62E32;
 
 .users {
   .index {
+    font-size: 24px;
+    font-weight: bold;
     list-style: none;
     margin-bottom: 2em;
     padding: 0;
-    position: relative;
-    text-align: center;
 
     li {
+      display: inline-block;
+    }
+
+    a {
       display: block;
-      float: left;
-      height: 50px;
-      position: relative;
-      width: 35px;
-      text-align: center;
+      padding: 0.25em 3px 0 0;
+      text-decoration: none;
 
-      a {
-        bottom: 0;
-        display: block;
-        font-size: 1.5em;
-        margin: 0 auto;
-        padding: 0.1em 0.2em;
-        position: absolute;
-        -webkit-transition: font-size 0.1s; 
-
-        &:hover {
-          background: #ffd;
-          font-size: 2.5em;
-        }
+      &:visited {
+        color: blue;
+      }
+      &:hover,
+      &:focus {
+        color: $red;
+        text-decoration: underline;
       }
     }
+
   }
 
   .index-letter {
@@ -53,11 +49,44 @@ $red: #C62E32;
     color: #777;
   }
 
+//  .user-list {
+//    list-style: none;
+//    margin: 0 0 0.8em 0;
+//    padding: 0;
+//  }
+
   .user-list {
     list-style: none;
     padding: 0;
+    .user {
+      display: block;
+      float: left;
+      margin: 0 20px 0.8em 1.2em;
+      width: 280px;
+
+      &:nth-child(3n-2) {
+        margin-left: 0;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      .avatar {
+        display: inline-block;
+        margin-right: 0.4em;
+        vertical-align: middle;
+        width: 80px;
+      }
+      a {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
   }
 }
+
+
 
 // ============================================================================
 // SHOW
