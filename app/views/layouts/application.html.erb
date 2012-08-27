@@ -17,8 +17,11 @@
   <div class="wrap">
 
   	<header id="banner" class="cf">
-  		<h1 class="mark"><%= link_to 'Cardiff Collective', root_url %></h1>
-  		<span class="strapline">Connect with creative people in Cardiff</span>
+  	  <div class="logo">
+    		<h1 class="mark"><%= link_to 'Cardiff Collective', root_url %></h1>
+    		<span class="strapline">Connect with creative people in Cardiff</span>
+    	</div>
+      <%= render partial: 'devise/menu/login_items' %>
   	</header>
 
     <%= render 'shared/flash', object: flash %>
@@ -28,9 +31,7 @@
     </div>
 
     <footer id="footer" class="cf">
-      <ul class="login-items">
-        <%= render partial: 'devise/menu/login_items' %>
-      </ul>
+
     </footer>
 
   </div>
