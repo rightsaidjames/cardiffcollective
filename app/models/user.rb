@@ -16,6 +16,12 @@ class User < ActiveRecord::Base
   before_save :strip_names
   before_update :log_tags
 
+  validates :first_name, :last_name, :email, :bio, :presence => true
+  validates :first_name, :last_name, :format => { :with => /\A[a-zA-Z]+\z/,
+                                                  :message => "Only letters allowed" }
+  validates :email, :uniqueness => { :case_sensitive => false }
+  validates :bio, :length => { :in => 2..140 }
+
   # Public: The User's full name
   #
   # Returns a String of the User's first_name and last_name
