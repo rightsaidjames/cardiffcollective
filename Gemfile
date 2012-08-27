@@ -6,6 +6,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'acts-as-taggable-on'
+gem 'gravatar_image_tag'
 
 group :development, :test do
   gem 'faker'

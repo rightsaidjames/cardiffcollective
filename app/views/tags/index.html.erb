@@ -8,7 +8,7 @@
       <% current_user.learning.each do |tag| %>
         <% User.tagged_with(tag, :on => :skills).each do |user| %>
           <li class="user">
-            <%= image_tag user.avatar_path, class: 'avatar' %>
+            <%= gravatar_image_tag user.email, alt: user.name, class: 'avatar', gravatar: { size: 32 } %>
             <%= link_to user.name, user %> can help you learn <%= link_to tag, tag_path(tag), class: 'tag' %>
           </li>
         <% end %>
@@ -23,7 +23,7 @@
       <% current_user.skills.each do |tag| %>
         <% User.tagged_with(tag, :on => :learning).each do |user| %>
           <li class="user">
-            <%= image_tag user.avatar_path, class: 'avatar' %>
+            <%= gravatar_image_tag user.email, alt: user.name, class: 'avatar', gravatar: { size: 32 } %>
             You can help <%= link_to user.name, user %> to learn <%= link_to tag, tag_path(tag), class: 'tag' %>
         </li>
         <% end %>
