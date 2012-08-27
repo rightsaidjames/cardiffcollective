@@ -110,6 +110,32 @@ input[type=password] {
 
 }
 
+.message {
+  border: 1px solid;
+  border-radius: 2px;
+  margin-bottom: 0.8em;
+  padding: 0.25em 0.5em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.message-notice {
+  background: #DFF0D8;
+  border-color: #D6E9C6;
+  color: #468847;
+}
+
+.message-warning {
+  background: #FCF8E3;
+  border-color: #FBEED5;
+  color: #C09853;
+}
+
+.message-error {
+  background: #F2DEDE;
+  border-color: #EED3D7;
+  color: #B94A48;
+}
+
 // ============================================================================
 // FOOTER
 // ============================================================================

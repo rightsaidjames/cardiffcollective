@@ -24,9 +24,8 @@
       <%= render partial: 'devise/menu/login_items' %>
   	</header>
 
-    <%= render 'shared/flash', object: flash %>
-
   	<div id="main" class="cf">
+  	  <%= render partial: 'shared/flash', object: flash %>
       <%= yield %>
     </div>
 
