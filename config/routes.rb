@@ -6,7 +6,11 @@ Cardiffcollective::Application.routes.draw do
   match '/:id' => 'users#show', :as => :user, :via => :get
 
   devise_for :users
-  resources :users, :only => [:index]
+  resources :users, :only => [:index] do
+    member do
+      post 'contact'
+    end
+  end
 
   root :to => "users#index"
 

@@ -33,15 +33,17 @@
   <footer class="contact">
     <h1>Contact <%= @user.first_name %></h1>
     <% if current_user %>
-      <form action="#" method="post" accept-charset="utf-8">
+      <%= form_tag contact_user_path(@user) do %>
+
         <div class="field">
-          <textarea placeholder="Your message to <%= @user.first_name %>"></textarea>
+          <%= text_area_tag :message, '', placeholder: "Your message to #{ @user.first_name }" %>
         </div>
 
         <div class="field actions">
-          <input type="submit" value="Send Message">
+          <%= submit_tag 'Send Message' %>
         </div>
-      </form>
+
+      <% end %>
     <% else %>
       <p><%= link_to 'Sign In', new_user_session_path %> to contact <%= @user.name %>.</p>
     <% end %>

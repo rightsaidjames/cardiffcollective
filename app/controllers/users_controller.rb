@@ -16,4 +16,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def contact
+    if current_user
+      to = User.find(params[:id])
+      from = current_user
+      UserMailer.contact_email(from, to, params[:message]).deliver
+      redirect_to user_path(to), notice: "Your message to #{ to.name } was sent"
+    end
+  end
+
 end
