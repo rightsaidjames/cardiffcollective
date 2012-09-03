@@ -43,6 +43,18 @@ input[type=password] {
   margin-bottom: 0.8em;
 }
 
+.feedback {
+  background: #F93;
+  color: #fff;
+  padding: 0.8em 0.8em;
+  text-decoration: none;
+
+  &:hover {
+    background: #C60;
+    color: #F93;
+  }
+}
+
 // ============================================================================
 // WRAPPER
 // ============================================================================
@@ -153,13 +165,10 @@ input[type=password] {
 // ============================================================================
 
 #footer {
+  border-top: 1px solid #eee;
   margin-bottom: 4em;
-
-  .login-items {
-    list-style: none;
-    padding: 0;
-    text-align: right;
-  }
+  margin-top: 1em;
+  padding-top: 2em;
 }
 
 // ============================================================================
