@@ -59,12 +59,12 @@
 
       <div class="field">
         <%= f.label :password, class: 'required' %>
-        <%= f.password_field :password, placeholder: 'supersecret' %>
+        <%= f.password_field :password, autocomplete: 'off', placeholder: 'supersecret' %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation, class: 'required' %>
-        <%= f.password_field :password_confirmation, placeholder: 'supersecret' %>
+        <%= f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'supersecret' %>
       </div>
     </fieldset>
 

@@ -1,25 +1,94 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<section class="user edit">
+  <h2>Edit your profile</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <span class="required">* Required</span>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+    <fieldset>
+      <legend>Your Details</legend>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div class="field">
+        <%= f.label :first_name, class: 'required' %>
+        <%= f.text_field :first_name %>
+      </div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+      <div class="field">
+        <%= f.label :last_name, class: 'required' %>
+        <%= f.text_field :last_name %>
+      </div>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
+      <div class="field">
+        <%= f.label :bio, 'About you', class: 'required' %>
+        <%= f.text_area :bio, placeholder: '140 characters' %>
+      </div>
 
-<h3>Cancel my account</h3>
+      <div class="field">
+        <%= f.label :website %>
+        <%= f.url_field :website, placeholder: 'http://' %>
+      </div>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+      <div class="field">
+        <%= f.label :company %>
+        <%= f.text_field :company, placeholder: 'Example Ltd' %>
+      </div>
+    </fieldset>
 
-<%= link_to "Back", :back %>
+    <fieldset>
+      <legend>Your Skills</legend>
+
+      <div class="field">
+        <%= f.label :skill_list, "What are you good at?" %>
+        <%= f.text_field :skill_list, placeholder: 'Web Design, Programming, Drawing' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :learning_list, "What do you want to know more about?" %>
+        <%= f.text_field :learning_list, placeholder: 'Art, Photography, Business' %>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Account</legend>
+
+      <div class="field">
+        <%= f.label :email, class: 'required' %>
+        <%= f.email_field :email, placeholder: 'you@example.com' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: 'required' %>
+        <%= f.password_field :password, autocomplete: 'off', placeholder: 'supersecret' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: 'required' %>
+        <%= f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'supersecret' %>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Confirm</legend>
+
+      <div class="field">
+        <%= f.label :current_password %> <!-- <i>(we need your current password to confirm your changes)</i><br /> -->
+        <%= f.password_field :current_password, autocomplete: 'off' %>
+      </div>
+
+      <div class="field actions">
+        <%= f.submit "Update Profile" %>
+      </div>
+    </fieldset>
+
+  <% end %>
+
+  <%= link_to "Back", :back %>
+
+  <div class='cancel-account'>
+    <h3>Cancel my account</h3>
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => 'Are you sure? This will permanently delete your account and all data associated with it :(', :method => :delete %>.</p>
+  </div>
+
+</section>

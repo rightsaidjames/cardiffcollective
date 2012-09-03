@@ -1,6 +1,7 @@
 //  NEW
 
-.user.new {
+.user.new,
+.user.edit {
   fieldset {
     border: 1px solid #f4f4f4;
     margin-bottom: 0.8em;
@@ -35,10 +36,24 @@
   }
 
   .actions {
-    margin-left: 240px;
+    margin-left: 220px;
 
     input[type=submit] {
       padding: 1.4em 8em;
+    }
+  }
+}
+
+// Edit
+.user.edit {
+  .cancel-account {
+    float: right;
+    h3 {
+      font-size: 12px;
+      margin: 0 0 0.4em 0;
+    }
+    p {
+      font-size: 11px;
     }
   }
 }
