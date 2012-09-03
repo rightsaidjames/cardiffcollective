@@ -31,8 +31,10 @@
   </section>
 
   <footer class="contact">
-    <h1>Contact <%= @user.first_name %></h1>
-    <% if current_user %>
+    <% if current_user == @user %>
+      <%= link_to 'Find people who share your interests', tags_path %>
+    <% elsif user_signed_in? %>
+      <h1>Contact <%= @user.first_name %></h1>
       <%= form_tag contact_user_path(@user) do %>
 
         <div class="field">
@@ -45,6 +47,7 @@
 
       <% end %>
     <% else %>
+      <h1>Contact <%= @user.first_name %></h1>
       <p><%= link_to 'Sign In', new_user_session_path %> to contact <%= @user.name %>.</p>
     <% end %>
   </footer>
