@@ -1,6 +1,10 @@
 Cardiffcollective::Application.routes.draw do
 
-  resources :tags, :only => [:index, :show]
+  resources :tags, :only => [:index, :show] do
+    collection do
+      get 'all'
+    end
+  end
 
   match '/me' => 'users#me', :as => :my_profile, :via => :get
   match '/:id' => 'users#show', :as => :user, :via => :get

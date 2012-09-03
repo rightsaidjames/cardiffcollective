@@ -1,0 +1,15 @@
+<section id="all-tags">
+  <h1>People in Cardiff know about</h1>
+  <ul class="tags">
+    <% @tags.each do |tag| %>
+      <li class="cf">
+        <%= link_to tag, tag_path(tag), class: 'tag' %>
+        <ul class="user-list cf">
+          <% User.tagged_with(tag.name).each do |user| %>
+            <li class="user"><%= link_to gravatar_image_tag(user.email, alt: user.name, class: 'avatar', gravatar: { size: 32 }), user, title: user.name %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</section>

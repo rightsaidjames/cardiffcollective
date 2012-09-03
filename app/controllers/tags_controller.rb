@@ -5,6 +5,10 @@ class TagsController < ApplicationController
     @learnings = User.tag_counts_on(:learning).sort_by(&:count).reverse.take(5)
   end
 
+  def all
+    @tags = (User.tag_counts_on(:skills) + User.tag_counts_on(:learning)).uniq.sort_by { |tag| tag.name.downcase }
+  end
+
   def show
     @tag = params[:id]
     @skilled = User.tagged_with(@tag, :on => :skills)

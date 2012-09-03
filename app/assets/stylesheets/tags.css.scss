@@ -18,3 +18,41 @@
     }
   }
 }
+
+// ============================================================================
+// ALL
+// ============================================================================
+
+#all-tags {
+  .tags {
+    li {
+      display: block;
+      margin-bottom: 0.4em;
+      .tag {
+        display: block;
+        float: left;
+        margin-right: 0.4em;
+      }
+    }
+
+    .user-list {
+      display: block;
+      float: left;
+      margin: 0;
+      padding-left: 0;
+      vertical-align: bottom;
+
+      .user {
+        display: block;
+        float: left;
+        margin: 0 0.2em 0 0;
+        a {
+          display: block;
+          .avatar {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

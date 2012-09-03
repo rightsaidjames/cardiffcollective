@@ -41,12 +41,16 @@
     </section>
 
     <section id="learning">
-    <h1>Most requested skills</h1>
+      <h1>Most requested skills</h1>
       <ul class="tags">
         <% @learnings.each do |tag| %>
           <li><%= link_to tag, tag_path(tag), class: 'tag' %></li>
         <% end %>
       </ul>
+    </section>
+
+    <section id="all">
+      <%= link_to raw('See all tags &rarr;'), all_tags_path %>
     </section>
   <% end %>
 
