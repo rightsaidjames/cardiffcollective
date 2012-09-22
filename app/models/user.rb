@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   # Private
   # ===========================================================================
 
-  # private
+  private
 
   # Internal: Capitalize each name attribute
   #
