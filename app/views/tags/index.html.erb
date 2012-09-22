@@ -25,7 +25,7 @@
           <li class="user">
             <%= gravatar_image_tag user.email, alt: user.name, class: 'avatar', gravatar: { size: 32 } %>
             You can help <%= link_to user.name, user %> to learn <%= link_to tag, tag_path(tag), class: 'tag' %>
-        </li>
+          </li>
         <% end %>
       <% end %>
       </ul>
