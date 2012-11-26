@@ -16,8 +16,6 @@ class User < ActiveRecord::Base
   before_save :capitalize_names
 
   validates :first_name, :last_name, :email, :presence => true
-  validates :first_name, :last_name, :format => { :with => /\A[a-zA-Z]+\z/,
-                                                  :message => "only letters allowed" }
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :bio, :length => { :in => 2..140 }
 
