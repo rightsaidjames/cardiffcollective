@@ -64,4 +64,11 @@ Cardiffcollective::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  Airbrake.configure do |config|
+    config.api_key		= 'cae21198c8cf8bebd647d65b428d5cdd'
+    config.host				= 'pbderr.herokuapp.com'
+    config.port				= 80
+    config.secure			= config.port == 443
+  end
 end
