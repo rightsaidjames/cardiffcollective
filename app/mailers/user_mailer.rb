@@ -5,6 +5,7 @@ class UserMailer < ActionMailer::Base
     @message = message
 
     mail to: to.email,
+         bcc: from.email,
          from: %{"#{ from.name }" <#{ from.email }>},
          reply_to: from.email,
          subject: "#{ from.name } wants to get in touch"
