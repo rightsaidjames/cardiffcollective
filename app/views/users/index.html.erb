@@ -1,4 +1,16 @@
+<aside id="intro" class="cf">
+  <h2>Can you help with&hellip;</h2>
+  <ul class="tags">
+    <% @learnings.each do |tag| %>
+      <li><%= link_to tag, tag_path(tag), class: 'tag' %></li>
+    <% end %>
+    <li><%= link_to raw('See all tags &rarr;'), all_tags_path, class: 'tag' %></li>
+  </ul>
+
+</aside>
+
 <article class="users">
+  <h1>People in Cardiff</h1>
   <header>
     <ol class="index cf">
       <% ("A".."Z").each do |letter| %>

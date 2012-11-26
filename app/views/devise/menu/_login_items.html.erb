@@ -2,6 +2,9 @@
   <ul class="cf">
     <% if user_signed_in? %>
       <li>
+        <%= link_to 'Tag Match', tags_path %>
+      </li>
+      <li>
         <%= link_to 'My Profile', edit_user_registration_path %>
       </li>
       <li>

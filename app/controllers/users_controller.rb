@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users_letters = User.all.group_by { |u| u.name.first }.sort
+    @learnings = User.tag_counts_on(:learning).sort_by(&:count).reverse.take(5)
   end
 
   def show
