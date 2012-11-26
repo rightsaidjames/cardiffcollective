@@ -2,7 +2,7 @@
   <header>
     <%= gravatar_image_tag @user.email, alt: @user.name, class: 'avatar' %>
     <h1 class="name"><%= @user.name %></h1>
-    <%= link_to @user.website, "http://#{ @user.website }", class: "website" %>
+    <%= link_to @user.website, @user.website, class: 'website' %>
     <span class="company"><%= @user.company %></span>
   </header>
 
