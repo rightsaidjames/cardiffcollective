@@ -193,6 +193,11 @@ input[type=password] {
 
   li {
     display: inline-block;
+    margin-bottom: 0.25em;
+
+    .tag {
+      display: block;
+    }
   }
 }
 
