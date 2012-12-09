@@ -6,7 +6,7 @@ class TagsController < ApplicationController
   end
 
   def all
-    @tags = (User.tag_counts_on(:skills) + User.tag_counts_on(:learning)).uniq.sort_by { |tag| tag.name.downcase }
+    @tags = (User.tag_counts_on(:skills) + User.tag_counts_on(:learning)).uniq.sort_by { |tag| tag.taggings.count }.reverse
   end
 
   def show
