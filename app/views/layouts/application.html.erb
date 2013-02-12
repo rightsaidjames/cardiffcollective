@@ -39,7 +39,10 @@
     <%= link_to 'Feedback', 'https://trello.com/board/cardiff-collective/505e3f6040376cd93ec5f398', class: 'feedback', target: '_blank' %>
   </div>
 
-  <%= render 'shared/analytics' if Rails.env.production? %>
+  <% if Rails.env.production? %>
+    <%= render 'shared/analytics' %>
+    <%= render 'shared/fork' %>
+  <% end %>
 
 </body>
 </html>
