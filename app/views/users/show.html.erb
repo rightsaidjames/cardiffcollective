@@ -6,6 +6,17 @@
     <span class="company"><%= @user.company %></span>
   </header>
 
+  <section id="social-media" class="social-media">
+    <p>
+    	<%= if @user.twitter.present? %>
+    	  <%= link_to image_tag("twitter.jpg", :alt => "Twitter", :id => "twitter_icon", class: "social-icon"  ), "http://twitter.com/" + @user.twitter, class: 'twitter' %>
+    	<%= end %>
+    	<%= if @user.facebook.present? %>
+    	  <%= link_to image_tag("facebook.jpg", :alt => "Facebook", :id => "facebook_icon", class: "social-icon" ), "http://facebook.com/" + @user.facebook, class: 'facebook' %>
+    	<%= end %>
+    </p>
+  </section>
+
   <section id="bio" class="bio">
     <p><%= @user.bio %></p>
   </section>

@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :website, :company, :bio,
-                  :skills, :learning, :skill_list, :learning_list
+                  :twitter, :facebook, :skills, :learning, :skill_list, 
+                  :learning_list
 
   acts_as_taggable
   acts_as_taggable_on :skills, :learning
