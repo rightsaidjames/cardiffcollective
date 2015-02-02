@@ -1,3 +1,5 @@
+_**NOTE: this project was not created by me, this is just an orphaned fork.**_
+
 # Cardiff Collective
 
 An application to connect the people of Cardiff
